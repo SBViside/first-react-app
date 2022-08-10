@@ -1,0 +1,10 @@
+.myInput {
+  padding: 5px 0;
+  outline: none;
+  border: none;
+  color: gray;
+  transition: all 0.2s linear;
+}
+.myInput:hover {
+  color: black;
+}

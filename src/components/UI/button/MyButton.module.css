@@ -1,0 +1,15 @@
+.myButton {
+  padding: 10px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  border: none;
+  color: gray;
+  border-radius: 40px;
+}
+.myButton:hover {
+  background-color: #f4f4f4;
+}
+.myButton:active {
+  transform: scale(0.9);
+}
