@@ -29,7 +29,7 @@ function Posts() {
 
   useEffect(() => {
     fetchPosts();
-  }, [page]);
+  }, [page, limit]);
   
   const createPost = (post) => {
     setModal(false);
@@ -46,7 +46,7 @@ function Posts() {
         ? <Loader style={{margin: '251px auto'}} />
         : <PostList removePost={removePost} posts={sortedAndSearchedPosts} />
       }
-      <PageController page={page} setPage={setPage} totalPages={getCountOfPages(totalCount, limit)} />
+      <PageController limit={limit} setLimit={setLimit} page={page} setPage={setPage} totalPages={getCountOfPages(totalCount, limit)} />
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm createPost={createPost} />
       </MyModal>

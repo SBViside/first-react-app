@@ -8,3 +8,8 @@
 .myInput:hover {
   color: black;
 }
+
+.myInput option {
+  cursor: pointer;
+}
+

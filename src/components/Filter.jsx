@@ -23,7 +23,7 @@ function Filter({filter, setFilter, openModal}) {
     <div className='filter'>
       <MyInput ref={inputRef} onChange={(e) => setFilter({...filter, query: e.target.value})} placeholder="Поиск..." />
       <div className='filter__btns'>
-        <MySelect ref={selectRef} onChange={(e) => setFilter({...filter, sort: e.target.value})} title="Сортировать" options={options}/>
+        <MySelect ref={selectRef} value="" onChange={(e) => setFilter({...filter, sort: e.target.value})} title="Сортировать" options={options}/>
         <div>
           <MyButton onClick={resetFilter}>Сбросить</MyButton>
           <MyButton onClick={() => openModal(true)}>Написать пост</MyButton>

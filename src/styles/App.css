@@ -114,8 +114,8 @@ header {
   background: #ffffff;
   
   padding: 20px;
-  position: sticky;
-  top: 0;
+  /* position: sticky;
+  top: 0; */
 
   border-radius: 0 0 10px 10px ;
   background-color: linear-gradient(295deg, rgba(255,255,255,1) 100%, rgba(246,246,246,1) 100%);
