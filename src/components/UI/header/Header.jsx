@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import MyButton from '../button/MyButton';
+import { AuthContext } from '../../../context/context';
 
 function Header({ headerLinks }) {
+  
+  const {setIsAuth} = useContext(AuthContext);
+  
   return ( 
     <header>
       <nav>
@@ -13,6 +18,17 @@ function Header({ headerLinks }) {
             )}
         </ul>
       </nav>
+      <MyButton 
+        style={{
+          borderRadius: '10px',
+          padding: '15px',
+          position: 'absolute',
+          right: '10px',
+          top: '50%',
+          transform: 'translateY(-50%)'
+        }}
+        onClick={() => setIsAuth(false)}
+      >Выйти</MyButton>
     </header>   
   );
 }

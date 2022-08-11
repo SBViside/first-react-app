@@ -36,6 +36,12 @@ header {
   /* background-color: #ffffff; */
   box-shadow: 10px 10px 15px  #d3d3d6, -10px -10px 21px #fff;
   z-index: 20;
+  position: relative;
+}
+.exitButton {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
 }
 .navList {
   display: flex;
