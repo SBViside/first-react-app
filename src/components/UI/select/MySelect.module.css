@@ -1,15 +1,16 @@
 .myInput {
-  padding: 5px 0;
-  outline: none;
-  border: none;
-  color: gray;
-  transition: all 0.2s linear;
+    padding: 5px 0;
+    outline: none;
+    border: none;
+    color: gray;
+    background: transparent;
+    transition: all 0.2s linear;
 }
+
 .myInput:hover {
-  color: black;
+    color: black;
 }
 
 .myInput option {
-  cursor: pointer;
+    cursor: pointer;
 }
-

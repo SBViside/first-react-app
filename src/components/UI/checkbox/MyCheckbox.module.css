@@ -1,0 +1,31 @@
+.myCheckbox input {
+    display: none;
+}
+
+.myCheckbox label {
+    padding-left: 22px;
+    display: block;
+    font-size: 14px;
+    color: gray;
+    position: relative;
+    cursor: pointer;
+}
+
+.myCheckbox label:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #dfdfdf;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s ease-out;
+}
+
+.myCheckbox input:checked+label:before {
+    background-color: gray;
+    border-radius: 50%;
+    /* outline: 1px solid red; */
+}

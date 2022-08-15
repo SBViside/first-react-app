@@ -1,11 +1,10 @@
 .myInput {
-  padding: 10px;
-  outline: none;
-  border: none;
-  background: #ffffff;
-}
-.myInput:focus {
-  border: none;
+    padding: 10px;
+    outline: none;
+    border: none;
+    background: #ffffff;
 }
 
-.myInput:las
+.myInput:focus {
+    border: none;
+}
