@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: Nunito;
     font-size: 16px;
-    user-select: none;
     list-style: none;
     text-decoration: none;
 }
@@ -290,4 +289,50 @@ header {
 .loginForm button {
     font-size: 20px;
     border-radius: 10px;
+}
+
+
+
+
+.postPage {
+    padding: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 21px #d3d3d6, -10px -10px 21px rgba(255, 255, 255, 0.699);
+    background-color: #fff;
+}
+
+.postPage__h {
+    margin-bottom: 30px;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.postPage__body {
+    font-size: 20px;
+}
+
+.postPage__comments {
+    margin-top: 100px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.comments__h {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.comments__item {
+    margin: 25px 0 0 10px;
+}
+
+.comments__mail {
+    color: gray;
+    font-weight: 400;
+}
+
+.comments__mail:hover {
+    text-decoration: underline;
 }
