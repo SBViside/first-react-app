@@ -33,6 +33,9 @@ function Posts() {
   const createPost = (post) => {
     setModal(false);
     setPosts([...posts, { id: getClearID(posts), ...post }]);
+
+    // нужно изменить
+    document.getElementsByClassName("pageSelector")[0].scrollIntoView(true);
   };
 
   const removePost = (id) => setPosts(posts.filter((post) => post.id !== id));

@@ -7,14 +7,26 @@ import MyCheckbox from "../components/UI/checkbox/MyCheckbox";
 function Login({}) {
   const { setIsAuth } = useContext(AuthContext);
   const keepLoginCB = useRef();
+  const inputLogin = useRef();
+  const inputPassword = useRef();
 
   const login = (e) => {
     e.preventDefault();
+
+    if (!inputLogin.current.value) {
+      inputLogin.current.focus();
+      return;
+    }
+    if (!inputPassword.current.value) {
+      inputPassword.current.focus();
+      return;
+    }
+
     setIsAuth(true);
-    // console.log(keepLoginCB.current);
     if (keepLoginCB.current.checked) {
       localStorage["account"] = true;
     }
+    localStorage["accountName"] = inputLogin.current.value;
   };
 
   return (
@@ -22,8 +34,16 @@ function Login({}) {
       <form className="loginForm">
         <h1>Вход</h1>
         <div className="inputs">
-          <MyInput style={{ fontWeight: "700" }} placeholder="Ваш логин" />
-          <MyInput type="password" placeholder="Ваш пароль" />
+          <MyInput
+            ref={inputLogin}
+            style={{ fontWeight: "700" }}
+            placeholder="Ваш логин"
+          />
+          <MyInput
+            ref={inputPassword}
+            type="password"
+            placeholder="Ваш пароль"
+          />
           <MyCheckbox
             ref={keepLoginCB}
             title="Запомнить меня"

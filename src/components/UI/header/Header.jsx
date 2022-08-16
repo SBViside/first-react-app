@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import MyButton from "../button/MyButton";
 import { AuthContext } from "../../../context/context";
+import faris from "./354b5c040cac37946b68031e849de96a16ecc619_full.jpg";
 
 function Header({ headerLinks }) {
   const { setIsAuth } = useContext(AuthContext);
@@ -9,10 +10,15 @@ function Header({ headerLinks }) {
   const logout = () => {
     setIsAuth(false);
     localStorage.removeItem("account");
+    localStorage.removeItem("accountName");
   };
 
   return (
     <header>
+      <div className="user">
+        <img className="user__logo" src={faris} alt="faris" />
+        <p className="user__name">{localStorage["accountName"]}</p>
+      </div>
       <nav>
         <ul className="navList">
           {headerLinks.map((link) => (
@@ -22,17 +28,7 @@ function Header({ headerLinks }) {
           ))}
         </ul>
       </nav>
-      <MyButton
-        style={{
-          borderRadius: "10px",
-          padding: "15px",
-          position: "absolute",
-          right: "10px",
-          top: "50%",
-          transform: "translateY(-50%)",
-        }}
-        onClick={logout}
-      >
+      <MyButton className="exitButton" onClick={logout}>
         Выйти
       </MyButton>
     </header>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import useFetching from "../hooks/useFetching";
 import { PostService } from "../API/PostService";
 import Loader from "../components/UI/loader/Loader";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function Post(props) {
   const params = useParams();
@@ -48,6 +48,9 @@ export default function Post(props) {
           </div>
         </div>
       </div>
+      <Link to="/posts" className="backToPosts">
+        Назад к постам
+      </Link>
     </div>
   );
 }

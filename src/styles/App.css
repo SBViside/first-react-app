@@ -38,13 +38,45 @@ header {
     /* background-color: #ffffff; */
     box-shadow: 10px 10px 15px #d3d3d6, -10px -10px 21px #fff;
     z-index: 20;
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user .user__logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.user .user__name {
+    font-weight: 700;
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 .exitButton {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    border: none;
+    color: gray;
+}
+
+.exitButton:hover {
+    background-color: #f4f4f4;
 }
 
 .navList {
@@ -301,6 +333,21 @@ header {
     border-radius: 10px;
     box-shadow: 10px 10px 21px #d3d3d6, -10px -10px 21px rgba(255, 255, 255, 0.699);
     background-color: #fff;
+}
+
+.postPage .backToPosts {
+    float: right;
+    margin-top: 30px;
+    display: inline-block;
+    color: gray;
+    border-radius: 10px;
+    background: transparent;
+    padding: 10px;
+    transition: all 0.2s ease-out;
+}
+
+.postPage .backToPosts:hover {
+    background-color: #f4f4f4;
 }
 
 .postPage__h {
