@@ -33,19 +33,23 @@ export default function Post(props) {
         <p className="postPage__body">{post.body}</p>
         <div className="postPage__comments">
           <h2 className="comments__h">Комментарии ({comments.length})</h2>
-          <div className="comments__list">
-            {comments.map((c) => (
-              <div key={c.id} className="comments__item">
-                <h2>
-                  {c.name} /{" "}
-                  <a className="comments__mail" href={`mailto:${c.email}`}>
-                    {c.email}
-                  </a>
-                </h2>
-                <p>{c.body}</p>
-              </div>
-            ))}
-          </div>
+          {isCommLoading ? (
+            <Loader style={{ margin: "50px auto" }} />
+          ) : (
+            <div className="comments__list">
+              {comments.map((c) => (
+                <div key={c.id} className="comments__item">
+                  <h2>
+                    {c.name} /{" "}
+                    <a className="comments__mail" href={`mailto:${c.email}`}>
+                      {c.email}
+                    </a>
+                  </h2>
+                  <p>{c.body}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <Link to="/posts" className="backToPosts">

@@ -383,3 +383,7 @@ header {
 .comments__mail:hover {
     text-decoration: underline;
 }
+
+.sendComment {}
+
+.sendComment input {}
