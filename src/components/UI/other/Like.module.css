@@ -1,0 +1,41 @@
+.block,
+.content,
+.picture svg,
+.text {
+    transition: all 0.2s ease-out;
+    user-select: none;
+}
+
+.block {
+    display: flex;
+}
+
+.content {
+    margin-top: 20px;
+    /* border: 2px solid gray; */
+    padding: 5px;
+    display: flex;
+    border-radius: 5px;
+}
+
+.content:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.picture {
+    width: 20px;
+    height: 20px;
+}
+
+.text {
+    margin-left: 10px;
+    display: inline-block;
+    color: gray;
+    font-weight: 700;
+}
+
+.active {
+    /* border-color: black;
+    fill: black; */
+    color: #ff4848;
+}
