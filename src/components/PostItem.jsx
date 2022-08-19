@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import MyButton from "./UI/button/MyButton";
 import { useNavigate } from "react-router-dom";
 import { Like } from "./UI/other/Like";
-import { LikedContext } from "../context/context";
 
 function PostItem({ post, removePost, ...props }) {
   const navigate = useNavigate();

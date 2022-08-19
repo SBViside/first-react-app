@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import MyButton from "../button/MyButton";
-import { AuthContext } from "../../../context/context";
+import { AuthContext, LikedContext } from "../../../context/context";
 import userImage from "../../../assets/img/userImage.png";
 
 function Header({ headerLinks }) {
   const { setIsAuth } = useContext(AuthContext);
+  const { setLikedPosts } = useContext(LikedContext);
 
   const logout = () => {
     setIsAuth(false);
+    setLikedPosts([]);
     localStorage.removeItem("account");
     localStorage.removeItem("accountName");
+    localStorage.removeItem("likedPostsArray");
   };
 
   return (

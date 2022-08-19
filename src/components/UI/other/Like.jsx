@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import cls from "./Like.module.css";
 import { LikedContext } from "../../../context/context";
 
@@ -17,6 +17,10 @@ export function Like({ postId, ...props }) {
       setLikedPosts([...likedPosts, postId]);
     }
   };
+
+  useEffect(() => {
+    localStorage["likedPostsArray"] = JSON.stringify(likedPosts);
+  }, [liked]);
 
   return (
     <div className={liked ? cls.block + " " + cls.active : cls.block}>

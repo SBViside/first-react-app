@@ -13,8 +13,10 @@ function App() {
     ];
 
     const [isAuth, setIsAuth] = useState(localStorage['account']);
-    const [likedPosts, setLikedPosts] = useState([]);
-
+    const [likedPosts, setLikedPosts] = useState(
+        localStorage["likedPostsArray"]
+            ? JSON.parse(localStorage["likedPostsArray"])
+            : []);
 
     return (
         <div className="App">

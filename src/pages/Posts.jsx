@@ -34,7 +34,7 @@ function Posts() {
     setModal(false);
     setPosts([...posts, { id: getClearID(posts), ...post }]);
 
-    // нужно изменить
+    // need to change
     document.getElementsByClassName("pageSelector")[0].scrollIntoView(true);
   };
 
