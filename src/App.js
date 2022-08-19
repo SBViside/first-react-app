@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './styles/App.css';
-import { AuthContext } from './context/context';
+import { AuthContext, LikedContext } from './context/context';
 import { BrowserRouter } from 'react-router-dom';
 import Header from './components/UI/header/Header';
 import Rts from './router/Rts';
@@ -13,6 +13,8 @@ function App() {
     ];
 
     const [isAuth, setIsAuth] = useState(localStorage['account']);
+    const [likedPosts, setLikedPosts] = useState([]);
+
 
     return (
         <div className="App">
@@ -20,10 +22,16 @@ function App() {
                 isAuth,
                 setIsAuth
             }}>
-                <BrowserRouter>
-                    {isAuth && <Header headerLinks={headerLinks} />}
-                    <Rts />
-                </BrowserRouter>
+                <LikedContext.Provider value={{
+                    likedPosts,
+                    setLikedPosts,
+                }}
+                >
+                    <BrowserRouter>
+                        {isAuth && <Header headerLinks={headerLinks} />}
+                        <Rts />
+                    </BrowserRouter>
+                </LikedContext.Provider>
             </AuthContext.Provider>
         </div>
     );

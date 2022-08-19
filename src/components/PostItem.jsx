@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import MyButton from "./UI/button/MyButton";
 import { useNavigate } from "react-router-dom";
 import { Like } from "./UI/other/Like";
+import { LikedContext } from "../context/context";
 
 function PostItem({ post, removePost, ...props }) {
   const navigate = useNavigate();
-  const [liked, setLiked] = useState(false);
 
   const deleteThis = (e) => {
     e.stopPropagation();
     removePost(post.id);
-  };
-
-  const like = (e) => {
-    e.stopPropagation();
-    liked ? setLiked(false) : setLiked(true);
   };
 
   return (
@@ -26,7 +21,7 @@ function PostItem({ post, removePost, ...props }) {
         <p style={{ wordWrap: "break-word" }}>{post.body}</p>
 
         <div className="postButtons">
-          <Like setLike={like} checked={liked} />
+          <Like postId={post.id} />
         </div>
       </div>
       <MyButton style={{ alignSelf: "center" }} onClick={deleteThis}>

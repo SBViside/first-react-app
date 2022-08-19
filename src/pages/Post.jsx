@@ -3,10 +3,12 @@ import useFetching from "../hooks/useFetching";
 import { PostService } from "../API/PostService";
 import Loader from "../components/UI/loader/Loader";
 import { Link, useParams } from "react-router-dom";
+import PostComments from "../components/PostComments";
+import { Like } from "../components/UI/other/Like";
 
 export default function Post(props) {
   const params = useParams();
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
   const [getPost, isLoading, error] = useFetching(async () => {
     const response = await PostService.GetPostById(params.id);
@@ -31,26 +33,10 @@ export default function Post(props) {
           {post.id}. {post.title}
         </h1>
         <p className="postPage__body">{post.body}</p>
-        <div className="postPage__comments">
-          <h2 className="comments__h">Комментарии ({comments.length})</h2>
-          {isCommLoading ? (
-            <Loader style={{ margin: "50px auto" }} />
-          ) : (
-            <div className="comments__list">
-              {comments.map((c) => (
-                <div key={c.id} className="comments__item">
-                  <h2>
-                    {c.name} /{" "}
-                    <a className="comments__mail" href={`mailto:${c.email}`}>
-                      {c.email}
-                    </a>
-                  </h2>
-                  <p>{c.body}</p>
-                </div>
-              ))}
-            </div>
-          )}
+        <div className="postButtons">
+          <Like postId={post.id} />
         </div>
+        <PostComments comments={comments} isLoading={isCommLoading} />
       </div>
       <Link to="/posts" className="backToPosts">
         Назад к постам
