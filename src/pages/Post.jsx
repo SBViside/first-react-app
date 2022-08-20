@@ -5,6 +5,7 @@ import Loader from "../components/UI/loader/Loader";
 import { Link, useParams } from "react-router-dom";
 import PostComments from "../components/PostComments";
 import { Like } from "../components/UI/other/Like";
+import ModernLoader from "../components/UI/loader/ModernLoader";
 
 export default function Post(props) {
   const params = useParams();
@@ -25,7 +26,7 @@ export default function Post(props) {
   }, []);
 
   return isLoading ? (
-    <Loader style={{ margin: "100px auto 0" }} />
+    <ModernLoader style={{ margin: "100px auto 0" }} />
   ) : (
     <div className="postPage container">
       <div>

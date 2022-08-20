@@ -9,6 +9,7 @@ import { usePosts } from "../hooks/usePosts";
 import MyModal from "../components/UI/modal/MyModal";
 import { getClearID, getCountOfPages } from "../utils/utils";
 import PageController from "../components/PageController";
+import ModernLoader from "../components/UI/loader/ModernLoader";
 
 function Posts() {
   const [posts, setPosts] = useState([]);
@@ -44,21 +45,23 @@ function Posts() {
     <div className="container">
       <Filter filter={filter} setFilter={setFilter} openModal={setModal} />
       {isPostsLoading ? (
-        <Loader style={{ margin: "251px auto" }} />
+        <ModernLoader style={{ margin: "150px auto" }} />
       ) : (
-        <PostList
-          title="Список всех постов"
-          removePost={removePost}
-          posts={sortedAndSearchedPosts}
-        />
+        <div>
+          <PostList
+            title="Список всех постов"
+            removePost={removePost}
+            posts={sortedAndSearchedPosts}
+          />
+          <PageController
+            limit={limit}
+            setLimit={setLimit}
+            page={page}
+            setPage={setPage}
+            totalPages={getCountOfPages(totalCount, limit)}
+          />
+        </div>
       )}
-      <PageController
-        limit={limit}
-        setLimit={setLimit}
-        page={page}
-        setPage={setPage}
-        totalPages={getCountOfPages(totalCount, limit)}
-      />
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm createPost={createPost} />
       </MyModal>

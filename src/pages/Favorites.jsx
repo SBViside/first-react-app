@@ -4,6 +4,7 @@ import useFetching from "../hooks/useFetching";
 import PostList from "../components/PostList";
 import { PostService } from "../API/PostService";
 import Loader from "../components/UI/loader/Loader";
+import ModernLoader from "../components/UI/loader/ModernLoader";
 
 export default function Favorites(props) {
   const loadingPosts = [];
@@ -31,7 +32,7 @@ export default function Favorites(props) {
   return (
     <div className="favorites container">
       {isLoading ? (
-        <Loader style={{ margin: "200px auto 0" }} />
+        <ModernLoader style={{ margin: "200px auto 0" }} />
       ) : (
         <PostList
           title="Список понравившихся постов"
