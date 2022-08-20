@@ -5,6 +5,8 @@ import { AuthContext } from "../context/context";
 import MyCheckbox from "../components/UI/checkbox/MyCheckbox";
 
 function Login({}) {
+  document.title = `Вход на сайт`;
+
   const { setIsAuth } = useContext(AuthContext);
   const keepLoginCB = useRef();
   const inputLogin = useRef();

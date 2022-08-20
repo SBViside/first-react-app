@@ -7,6 +7,8 @@ import Loader from "../components/UI/loader/Loader";
 import ModernLoader from "../components/UI/loader/ModernLoader";
 
 export default function Favorites(props) {
+  document.title = "Любимые посты";
+
   const loadingPosts = [];
   const [posts, setPosts] = useState([]);
   const { likedPosts, setLikedPosts } = useContext(LikedContext);

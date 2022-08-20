@@ -8,6 +8,8 @@ import { Like } from "../components/UI/other/Like";
 import ModernLoader from "../components/UI/loader/ModernLoader";
 
 export default function Post(props) {
+  document.title = `Подробнее`;
+
   const params = useParams();
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);

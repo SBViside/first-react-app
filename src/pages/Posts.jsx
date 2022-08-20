@@ -12,6 +12,8 @@ import PageController from "../components/PageController";
 import ModernLoader from "../components/UI/loader/ModernLoader";
 
 function Posts() {
+  document.title = `Список постов`;
+
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useState({ sort: "", query: "" });
   const [modal, setModal] = useState(false);
