@@ -2,13 +2,13 @@ import React from "react";
 import PostItem from "./PostItem";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-function PostList({ posts, removePost, ...props }) {
+function PostList({ title, posts, removePost, ...props }) {
   return posts.length ? (
     <div className="postList">
       <h1
         style={{ fontSize: "30px", textAlign: "center", marginBottom: "20px" }}
       >
-        Список постов
+        {title}
       </h1>
       <TransitionGroup>
         {posts.map((post) => (

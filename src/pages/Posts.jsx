@@ -46,7 +46,11 @@ function Posts() {
       {isPostsLoading ? (
         <Loader style={{ margin: "251px auto" }} />
       ) : (
-        <PostList removePost={removePost} posts={sortedAndSearchedPosts} />
+        <PostList
+          title="Список всех постов"
+          removePost={removePost}
+          posts={sortedAndSearchedPosts}
+        />
       )}
       <PageController
         limit={limit}

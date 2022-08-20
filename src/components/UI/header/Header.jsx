@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MyButton from "../button/MyButton";
 import { AuthContext, LikedContext } from "../../../context/context";
 import userImage from "../../../assets/img/userImage.png";
 
 function Header({ headerLinks }) {
+  const navigate = useNavigate();
   const { setIsAuth } = useContext(AuthContext);
   const { setLikedPosts } = useContext(LikedContext);
 
@@ -18,7 +19,7 @@ function Header({ headerLinks }) {
 
   return (
     <header>
-      <div className="user">
+      <div className="user" onClick={() => navigate("/favorites")}>
         <img className="user__logo" src={userImage} alt="faris" />
         <p className="user__name">{localStorage["accountName"]}</p>
       </div>
