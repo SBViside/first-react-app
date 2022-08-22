@@ -394,3 +394,83 @@ header {
 .sendComment {}
 
 .sendComment input {}
+
+
+
+
+.photoList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.photoItem {
+    width: 250px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 21px #d3d3d6, -10px -10px 21px rgba(255, 255, 255, 0.699);
+    background-color: #fff;
+    transition: all 0.3s ease-out;
+
+    margin: 20px 0;
+    text-align: center;
+
+    position: relative;
+    overflow: visible;
+}
+
+.photoItem:hover {
+    box-shadow: 10px 10px 21px #6e6e6e, -10px -10px 21px rgba(211, 211, 211, 0.699);
+}
+
+.photoItem__text {
+    cursor: pointer;
+    padding: 15px 25px;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.photoItem:hover .photoItem__text {
+    opacity: 1;
+}
+
+
+
+.photoItem h1 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.photoItem img {
+    border-radius: 10px;
+    width: 200px;
+}
+
+
+.showImage {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.showImage p {
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    word-wrap: break-word;
+}
+
+.showImage img {
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

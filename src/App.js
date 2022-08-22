@@ -9,6 +9,7 @@ function App() {
 
     const headerLinks = [
         { title: 'Посты', path: '/posts' },
+        { title: 'Фотографии', path: '/photos' },
         { title: 'Информация', path: '/about' },
     ];
 
