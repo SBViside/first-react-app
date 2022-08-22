@@ -416,11 +416,11 @@ header {
     text-align: center;
 
     position: relative;
-    overflow: visible;
 }
 
 .photoItem:hover {
     box-shadow: 10px 10px 21px #6e6e6e, -10px -10px 21px rgba(211, 211, 211, 0.699);
+    transform: scale(1.05);
 }
 
 .photoItem__text {
@@ -441,9 +441,8 @@ header {
 
 .photoItem:hover .photoItem__text {
     opacity: 1;
+
 }
-
-
 
 .photoItem h1 {
     margin-bottom: 10px;
