@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import MyButton from "./UI/button/MyButton";
 import { useNavigate } from "react-router-dom";
 import { Like } from "./UI/other/Like";

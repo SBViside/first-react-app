@@ -3,7 +3,6 @@ import { LikedContext } from "../context/context";
 import useFetching from "../hooks/useFetching";
 import PostList from "../components/PostList";
 import { PostService } from "../API/PostService";
-import Loader from "../components/UI/loader/Loader";
 import ModernLoader from "../components/UI/loader/ModernLoader";
 
 export default function Favorites(props) {
